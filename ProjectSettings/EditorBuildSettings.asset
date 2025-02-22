@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/FlurScene.unity
     guid: c89b9e63054cd984aa24b0fee337cced
   - enabled: 1
-    path: Assets/Scenes/TestScene.unity
-    guid: 1e35c0e8b245c454ea53d809b9a7b6bc
+    path: Assets/Scenes/Kaminfeuer.unity
+    guid: dbe990ed3aae3479fa06a9807df1f6c7
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 12fd0557b525d5341a798772860ffacc, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0dd2159839708a444a0b1a24866de6b4, type: 2}
