@@ -9,44 +9,41 @@ public class ButtonVr : MonoBehaviour
     public UnityEvent onPress; // Event für das Drücken der Taste
     public UnityEvent onRelease; // Event für das Loslassen der Taste
     private AudioSource sound; // Der Audioclip der Taste
-    private bool isPressed; // Status der Taste (gedrückt oder nicht)
+    private bool isPressed = false; // Status der Taste (gedrückt oder nicht)
     private Vector3 initialPosition; // Startposition der Taste
 
     void Start()
     {
         sound = GetComponent<AudioSource>(); // AudioSource des Objekts finden
-        isPressed = false; // Taste ist standardmäßig nicht gedrückt
         initialPosition = button.transform.localPosition; // Startposition speichern
     }
 
-    // Wird aufgerufen, wenn ein Mauszeiger auf das Objekt klickt
-    private void OnMouseDown()
+    private void OnTriggerEnter(Collider other)
     {
-        if (!isPressed && button != null) // Prüfen, ob die Taste nicht schon gedrückt ist
+        if (!isPressed && button != null && other.CompareTag("VRController")) // Prüfen, ob ein VR-Controller die Taste berührt
         {
-            Debug.Log("Taste wird gedrückt."); // Debug-Meldung
-            button.transform.localPosition = initialPosition + new Vector3(0, -0.3f, 0); // Taste nach unten bewegen
-            onPress.Invoke(); // onPress-Event auslösen
+            Debug.Log("VR-Controller drückt Taste.");
+            button.transform.localPosition = initialPosition + new Vector3(0, -0.03f, 0); // Taste nach unten bewegen
+            onPress.Invoke(); // Event auslösen
 
             // Sound abspielen, wenn verfügbar
-            if (sound != null) 
+            if (sound != null)
             {
-                sound.Play(); 
-                Debug.Log("Sound wird abgespielt."); 
+                sound.Play();
+                Debug.Log("Sound wird abgespielt.");
             }
 
             isPressed = true; // Taste ist jetzt gedrückt
         }
     }
 
-    // Wird aufgerufen, wenn die Maus losgelassen wird
-    private void OnMouseUp()
+    private void OnTriggerExit(Collider other)
     {
-        if (isPressed && button != null) // Prüfen, ob die Taste gedrückt war
+        if (isPressed && button != null && other.CompareTag("VRController")) // Prüfen, ob der VR-Controller die Taste verlässt
         {
-            Debug.Log("Taste wird losgelassen."); // Debug-Meldung
+            Debug.Log("VR-Controller lässt Taste los.");
             button.transform.localPosition = initialPosition; // Taste in Ausgangsposition bewegen
-            onRelease.Invoke(); // onRelease-Event auslösen
+            onRelease.Invoke(); // Event für das Loslassen
             isPressed = false; // Taste ist nicht mehr gedrückt
         }
     }
