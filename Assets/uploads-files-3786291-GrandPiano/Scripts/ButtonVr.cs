@@ -20,9 +20,10 @@ public class ButtonVr : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isPressed && button != null && other.CompareTag("VRController")) // Prüfen, ob ein VR-Controller die Taste berührt
+        
+        if (!isPressed && button != null)
         {
-            Debug.Log("VR-Controller drückt Taste.");
+            Debug.Log(other.gameObject.name + " drückt Taste.");
             button.transform.localPosition = initialPosition + new Vector3(0, -0.03f, 0); // Taste nach unten bewegen
             onPress.Invoke(); // Event auslösen
 
@@ -39,9 +40,9 @@ public class ButtonVr : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (isPressed && button != null && other.CompareTag("VRController")) // Prüfen, ob der VR-Controller die Taste verlässt
+        if (isPressed && button != null)
         {
-            Debug.Log("VR-Controller lässt Taste los.");
+            Debug.Log(other.gameObject.name + " lässt Taste los.");
             button.transform.localPosition = initialPosition; // Taste in Ausgangsposition bewegen
             onRelease.Invoke(); // Event für das Loslassen
             isPressed = false; // Taste ist nicht mehr gedrückt
