@@ -58,7 +58,7 @@ public class ButtonVr : MonoBehaviour
                         Debug.Log("Sound wird abgespielt.");
                     }
 
-                    isPressed = true; // Taste ist jetzt gedrückt
+                    isPressed = true; // Taste ist gedrückt
                 }
                 else if (!triggerValue && isPressed && button != null) // Wenn der Trigger losgelassen wird
                 {
