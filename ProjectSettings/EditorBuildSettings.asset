@@ -11,6 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Kaminfeuer.unity
     guid: dbe990ed3aae3479fa06a9807df1f6c7
+  - enabled: 1
+    path: Assets/Scenes/EndeNoraBleibt.unity
+    guid: 1bbaab28c41250f419132f0ca332d2eb
+  - enabled: 1
+    path: Assets/Scenes/EndeNorageht.unity
+    guid: 16772ec029a2c57439e5f1c054c63c2f
+  - enabled: 1
+    path: Assets/Scenes/EndeNoraGehtMitKindern.unity
+    guid: f41a6e09262a40647b6b4dcccddbb37e
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 12fd0557b525d5341a798772860ffacc, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0dd2159839708a444a0b1a24866de6b4, type: 2}
