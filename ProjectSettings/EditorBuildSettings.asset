@@ -4,7 +4,25 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/FlurScene.unity
+    guid: c89b9e63054cd984aa24b0fee337cced
+  - enabled: 1
+    path: Assets/Scenes/Kaminfeuer.unity
+    guid: dbe990ed3aae3479fa06a9807df1f6c7
+  - enabled: 1
+    path: Assets/Scenes/EndeNorableibt.unity
+    guid: 1bbaab28c41250f419132f0ca332d2eb
+  - enabled: 1
+    path: Assets/Scenes/EndeNorageht.unity
+    guid: 16772ec029a2c57439e5f1c054c63c2f
+  - enabled: 1
+    path: Assets/Scenes/EndeNoraGehtMitKindern.unity
+    guid: f41a6e09262a40647b6b4dcccddbb37e
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 5e80124aa1635ee45ad488435c5939df
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 12fd0557b525d5341a798772860ffacc, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0dd2159839708a444a0b1a24866de6b4, type: 2}
